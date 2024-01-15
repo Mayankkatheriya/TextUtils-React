@@ -1,11 +1,11 @@
-import React, { memo, useReducer } from "react";
+import React, { memo } from "react";
 import Button from "./Button";
 import "./Home.css";
 import { useReducerContext } from "../../Context/ReducerContext";
 
 const Home = () => {
   console.log("Home");
-  const {state, dispatch} = useReducerContext()
+  const {state, dispatch} = useReducerContext();
 
   return (
     <main>

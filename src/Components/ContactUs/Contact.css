@@ -1,0 +1,19 @@
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+.contact .container h1{
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+.dark .contact{
+    color: white;
+}
+.dark .contact a{
+    color: rgb(118, 134, 207);
+}
