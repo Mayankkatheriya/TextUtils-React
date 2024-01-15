@@ -1,22 +1,15 @@
 import "./Header.css";
-import React, { useEffect, useReducer } from "react";
+import React, { memo, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
+import { useReducerContext } from "../../Context/ReducerContext";
 
 const Header = () => {
-  const toggleHandler = (initState, action) => {
-    switch (action.type) {
-      case "toggle":
-        return !initState;
-
-      default:
-        break;
-    }
-  };
-  const [isDark, dispatch] = useReducer(toggleHandler, false);
+    console.log("Header");
+  const {state, dispatch} = useReducerContext()
 
   useEffect(() => {
-    document.body.classList[isDark ? "add" : "remove"]("dark");
-  }, [isDark]);
+    document.body.classList[state.theme ? "add" : "remove"]("dark");
+  }, [state]);
 
   return (
     <header>
@@ -37,14 +30,14 @@ const Header = () => {
         </ul>
       </nav>
       <nav className="nav_right">
-        <div class="checkbox-wrapper-54">
-          <label class="switch">
+        <div className="checkbox-wrapper-54">
+          <label className="switch">
             <input
               type="checkbox"
-              checked={isDark}
+              checked={state.theme}
               onChange={() => dispatch({ type: "toggle" })}
             />
-            <span class="slider"></span>
+            <span className="slider"></span>
           </label>
         </div>
       </nav>
@@ -52,4 +45,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo (Header);
