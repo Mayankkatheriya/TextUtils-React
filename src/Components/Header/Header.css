@@ -71,6 +71,7 @@ header{
     position: sticky;
     top: 0;
     left: 0;
+    background-color: var(--nav-background);
 }
 header ul{
     display: flex;
@@ -83,7 +84,11 @@ header ul li{
 header ul li a{
     text-decoration: none;
     font-weight: 600;
-    color:darkcyan
+    color: var(--nav-links-color);
+}
+
+header ul li a:hover, header ul li a:active{
+  color: var(--nav-link-hover);
 }
 .nav_left a {
     text-decoration: none;
